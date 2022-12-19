@@ -7,22 +7,17 @@ function App() {
   const domain = "http://localhost:4000";
   const [agoraStatesDiscussions, setAgoraStatesDiscussions] = useState([]);
 
-  const getAgoraStatesDiscussions = (limit, page) => {
-    // const response = await fetch(
-    //   domain +
-    //     "discussions?" +
-    //     new URLSearchParams({
-    //       limit,
-    //       page,
-    //     })
-    // );
-    // const data = await response.json();
-    // setAgoraStatesDiscussions(data);
-    fetch(domain + "/discussions/")
-      .then((res) => res.json())
-      .then((data) => {
-        setAgoraStatesDiscussions(data);
-      });
+  const getAgoraStatesDiscussions = async () => {
+    const response = await fetch(
+      domain +
+        "/discussions?" +
+        new URLSearchParams({
+          limit: 10,
+          page: 3,
+        })
+    );
+    const data = await response.json();
+    setAgoraStatesDiscussions(data);
   };
 
   useEffect(() => {
@@ -64,11 +59,15 @@ function App() {
       <h1 className="home">Home</h1>
       <Form addDiscussion={addDiscussion} />
       {/* <section className="discussion__wrapper"> */}
-      <DiscussionList
-        // className="discussions__container"
-        list={agoraStatesDiscussions}
-        deleteDiscussion={deleteDiscussion}
-      />
+      <li className="discussions__item">
+        <ul className="discussions__question__answer__container">
+          <DiscussionList
+            // className="discussions__container"
+            list={agoraStatesDiscussions}
+            deleteDiscussion={deleteDiscussion}
+          />
+        </ul>
+      </li>
       {/* <div className="pagination__wrapper"></div> */}
       {/* </section> */}
     </main>

@@ -1,4 +1,4 @@
-function DiscussionAnswer({ discussion, deleteDiscussion }) {
+function DiscussionWithAnswer({ discussion, deleteDiscussion }) {
   const { id, answer, url, author, avatarUrl, createdAt, title } = discussion;
   const {
     avatarUrl: answerAvatarUrl,
@@ -10,8 +10,8 @@ function DiscussionAnswer({ discussion, deleteDiscussion }) {
   const parsedDate = Date.parse(createdAt);
   const localedDate = new Date(parsedDate).toLocaleString();
 
-  const pasedDate2 = Date.parse(answerCreatedAt);
-  const localeDate2 = new Date(pasedDate2).toLocaleString();
+  const parsedDate2 = Date.parse(answerCreatedAt);
+  const localeDate2 = new Date(parsedDate2).toLocaleString();
 
   return (
     <li className="discussions__item">
@@ -94,4 +94,4 @@ function DiscussionAnswer({ discussion, deleteDiscussion }) {
   );
 }
 
-export default DiscussionAnswer;
+export default DiscussionWithAnswer;

@@ -1,4 +1,4 @@
-function DiscussionQuestion({ discussion, deleteDiscussion }) {
+function DiscussionWithoutAnswer({ discussion, deleteDiscussion }) {
   const { id, answer, url, author, avatarUrl, createdAt, title } = discussion;
 
   const parsedDate = Date.parse(createdAt);
@@ -50,4 +50,4 @@ function DiscussionQuestion({ discussion, deleteDiscussion }) {
   );
 }
 
-export default DiscussionQuestion;
+export default DiscussionWithoutAnswer;

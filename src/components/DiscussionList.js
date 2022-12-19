@@ -1,16 +1,16 @@
-import DiscussionQuestion from "./DiscussionWithoutAnswer";
-import DiscussionAnswer from "./DiscussionWithAnswer";
+import DiscussionWithoutAnswer from "./DiscussionWithoutAnswer";
+import DiscussionWithAnswer from "./DiscussionWithoutAnswer";
 
 function DiscussionList({ list = [], deleteDiscussion }) {
   const listItems = list.map((list) => {
     return list.answer ? (
-      <DiscussionAnswer
+      <DiscussionWithAnswer
         key={list.id}
         discussion={list}
         deleteDiscussion={deleteDiscussion}
       />
     ) : (
-      <DiscussionQuestion
+      <DiscussionWithoutAnswer
         key={list.id}
         discussion={list}
         deleteDiscussion={deleteDiscussion}
