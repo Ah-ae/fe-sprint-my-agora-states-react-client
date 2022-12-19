@@ -1,5 +1,5 @@
 import DiscussionWithoutAnswer from "./DiscussionWithoutAnswer";
-import DiscussionWithAnswer from "./DiscussionWithoutAnswer";
+import DiscussionWithAnswer from "./DiscussionWithAnswer";
 
 function DiscussionList({ list = [], deleteDiscussion }) {
   const listItems = list.map((list) => {

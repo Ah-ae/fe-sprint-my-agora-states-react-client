@@ -8,7 +8,7 @@ function DiscussionWithAnswer({ discussion, deleteDiscussion }) {
   } = answer;
 
   const parsedDate = Date.parse(createdAt);
-  const localedDate = new Date(parsedDate).toLocaleString();
+  const localeDate = new Date(parsedDate).toLocaleString();
 
   const parsedDate2 = Date.parse(answerCreatedAt);
   const localeDate2 = new Date(parsedDate2).toLocaleString();
@@ -21,14 +21,14 @@ function DiscussionWithAnswer({ discussion, deleteDiscussion }) {
             <img
               className="discussion__avatar--image"
               src={avatarUrl}
-              alt="avatar of kimploo"
+              alt={`avatar of ${author}`}
             />
           </div>
           <div className="discussion__content">
             <div className="discussion__information__wrapper">
               <div className="discussion__information">
                 <span className="discussion__author">{author}</span>
-                <span className="discussion__createdAt">{localedDate}</span>
+                <span className="discussion__createdAt">{localeDate}</span>
               </div>
               <button className="discussion__information--delete--btn">
                 <img
