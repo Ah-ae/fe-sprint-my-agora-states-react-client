@@ -1,5 +1,5 @@
 function DiscussionWithoutAnswer({ discussion, deleteDiscussion }) {
-  const { id, answer, url, author, avatarUrl, createdAt, title } = discussion;
+  const { id, answer, url, author, createdAt, title } = discussion;
 
   const parsedDate = Date.parse(createdAt);
   const localedDate = new Date(parsedDate).toLocaleString();
@@ -11,14 +11,14 @@ function DiscussionWithoutAnswer({ discussion, deleteDiscussion }) {
           <div className="discussion__avatar--wrapper">
             <img
               className="discussion__avatar--image"
-              src={avatarUrl}
-              alt={`avatar of ${author}`}
+              src={author.avatarUrl}
+              alt={`avatar of ${author.login}`}
             />
           </div>
           <div className="discussion__content">
             <div className="discussion__information__wrapper">
               <div className="discussion__information">
-                <span className="discussion__author">{author}</span>
+                <span className="discussion__author">{author.login}</span>
                 <span className="discussion__createdAt">{localedDate}</span>
               </div>
               <button className="discussion__information--delete--btn">

@@ -1,7 +1,6 @@
 function DiscussionWithAnswer({ discussion, deleteDiscussion }) {
-  const { id, answer, url, author, avatarUrl, createdAt, title } = discussion;
+  const { id, author, answer, url, createdAt, title } = discussion;
   const {
-    avatarUrl: answerAvatarUrl,
     author: answerAuthor,
     createdAt: answerCreatedAt,
     url: answerUrl,
@@ -20,14 +19,14 @@ function DiscussionWithAnswer({ discussion, deleteDiscussion }) {
           <div className="discussion__avatar--wrapper">
             <img
               className="discussion__avatar--image"
-              src={avatarUrl}
-              alt={`avatar of ${author}`}
+              src={author.avatarUrl}
+              alt={`avatar of ${author.login}`}
             />
           </div>
           <div className="discussion__content">
             <div className="discussion__information__wrapper">
               <div className="discussion__information">
-                <span className="discussion__author">{author}</span>
+                <span className="discussion__author">{author.login}</span>
                 <span className="discussion__createdAt">{localeDate}</span>
               </div>
               <button className="discussion__information--delete--btn">
@@ -58,14 +57,14 @@ function DiscussionWithAnswer({ discussion, deleteDiscussion }) {
           <div className="discussion__avatar--wrapper">
             <img
               className="discussion__avatar--image"
-              src={answerAvatarUrl}
-              alt={`avatar of ${answerAuthor}`}
+              src={answerAuthor.avatarUrl}
+              alt={`avatar of ${answerAuthor.login}`}
             />
           </div>
           <div className="discussion__content">
             <div className="discussion__information__wrapper">
               <div className="discussion__information">
-                <span className="discussion__author">{answerAuthor}</span>
+                <span className="discussion__author">{answerAuthor.login}</span>
                 <span className="discussion__createdAt">{localeDate2}</span>
               </div>
               <button className="discussion__information--delete--btn">

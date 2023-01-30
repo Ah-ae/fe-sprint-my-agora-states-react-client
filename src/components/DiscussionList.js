@@ -2,7 +2,8 @@ import DiscussionWithoutAnswer from "./DiscussionWithoutAnswer";
 import DiscussionWithAnswer from "./DiscussionWithAnswer";
 
 function DiscussionList({ list = [], deleteDiscussion }) {
-  const listItems = list.map((list) => {
+  const listItems = list.map((el) => {
+    const list = el.node;
     return list.answer ? (
       <DiscussionWithAnswer
         key={list.id}
