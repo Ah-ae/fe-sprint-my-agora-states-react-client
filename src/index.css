@@ -104,6 +104,7 @@ textarea {
   font-weight: 700;
   text-align: center;
   border-radius: 24px;
+  cursor: pointer;
 }
 
 
@@ -152,6 +153,7 @@ li.discussion__answer {
 }
 .discussion__information--delete--btn {
   scale: 0.9;
+  cursor: pointer;
 }
 
 .discussion__answered {
